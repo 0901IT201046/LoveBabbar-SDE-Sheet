@@ -1,0 +1,12 @@
+//User function Template for C++
+
+class Solution
+{
+   public:
+    int findSum(int A[], int N)
+    {
+    	sort(A,A+N);
+    	return A[N-1] + A[0];
+    }
+
+};
