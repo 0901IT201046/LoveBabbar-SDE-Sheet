@@ -1,0 +1,27 @@
+// Function to return minimum number of jumps to end of array
+
+class Solution{
+  public:
+    int minJumps(int arr[], int n)
+    {
+         bool reachable=false;
+        int count=0;
+        for(int i=n-1;i>0;)
+        {
+            int min=i;
+            for(int j=i-1;j>=0;j--)
+            {
+                if(arr[j]>=i-j && j==0)
+                    return ++count;
+                if(arr[j]>=i-j)
+                {
+                    min=j;
+                }
+            }
+            if(min==i)
+                return -1;
+            i=min;
+            count++;
+        }
+    }
+};
